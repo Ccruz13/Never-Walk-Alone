@@ -1,7 +1,8 @@
 # Never-Walk-Alone
 ## Description
 
-The tech blog where users can write blogs about different technologies
+Using our application, a user can post threads expressing their thoughts and emotions on any troubled time that they are going through. Also, users will be able to connect with support groups.
+
 
 ## Table of Contents
 
