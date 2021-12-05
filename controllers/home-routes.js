@@ -2,13 +2,15 @@ const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
 const router = require('express').Router();
 
+module.exports = (app) => {
 
-router.get('/', (req, res) => {
+
+app.get('/', (req, res) => {
     Post.findAll({
       attributes: [
         'id',
         'title',
-        'content',
+        'post_content',
         'created_at'
       ],
       include: [
@@ -36,7 +38,7 @@ router.get('/', (req, res) => {
       });
 });
 
-router.get('/login', (req, res) => {
+app.get('/login', (req, res) => {
     if(req.session.loggedIn) {
         res.redirect('/');
         return; 
@@ -44,18 +46,18 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
-router.get('/signup', (req, res) => {
+app.get('/signup', (req, res) => {
     res.render('signup');
 });
 
-router.get('/post/:id', (req, res) => {
+app.get('/post/:id', (req, res) => {
     Post.findOne({
       where: {
         id: req.params.id
       },
       attributes: [
         'id',
-        'content',
+        'post_content',
         'title',
         'created_at'
       ],
@@ -93,14 +95,14 @@ router.get('/post/:id', (req, res) => {
       });
   });
 
-router.get('/posts-comments', (req, res) => {
+app.get('/posts-comments', (req, res) => {
     Post.findOne({
         where: {
           id: req.params.id
         },
         attributes: [
           'id',
-          'content',
+          'post_content',
           'title',
           'created_at'
         ],
@@ -134,5 +136,4 @@ router.get('/posts-comments', (req, res) => {
           res.status(500).json(err);
         });
 });
-
-module.exports = router; 
+};

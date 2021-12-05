@@ -1,8 +1,10 @@
-const router = require('express').Router();
+// const router = require('express').Router();
 const { Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.get('/', (req, res) => {
+module.exports = (app) => {
+
+app.get('/api/comments', (req, res) => {
     Comment.findAll({})
         .then(dbCommentData => res.json(dbCommentData))
         .catch(err => {
@@ -11,7 +13,7 @@ router.get('/', (req, res) => {
         })
 });
 
-router.get('/:id', (req, res) => {
+app.get('/api/comments/:id', (req, res) => {
     Comment.findAll({
             where: { 
                 id: req.params.id}
@@ -23,7 +25,7 @@ router.get('/:id', (req, res) => {
         })
 });
 
-router.post('/', withAuth, (req, res) => {
+app.post('/api/comments', withAuth, (req, res) => {
     if (req.session) {
     Comment.create({
         comment_text: req.body.comment_text, 
@@ -38,7 +40,7 @@ router.post('/', withAuth, (req, res) => {
     }
 });
 
-router.put('/:id', withAuth, (req, res) => {
+app.put('/api/comments/:id', withAuth, (req, res) => {
     Comment.update({
         comment_text: req.body.comment_text
       },
@@ -58,7 +60,7 @@ router.put('/:id', withAuth, (req, res) => {
     });
 });
 
-router.delete('/:id', withAuth, (req, res) => {
+app.delete('/api/comments/:id', withAuth, (req, res) => {
     Comment.destroy({
         where: {
             id: req.params.id 
@@ -74,5 +76,4 @@ router.delete('/:id', withAuth, (req, res) => {
         res.status(500).json(err);
     });
 });
-
-module.exports = router;
+};

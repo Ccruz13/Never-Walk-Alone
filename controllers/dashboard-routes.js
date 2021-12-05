@@ -3,8 +3,9 @@ const sequelize = require('../config/connection');
 const {Post, User, Comment} = require('../models');
 const withAuth = require('../utils/auth');
 
+module.exports = (app) => {
 
-router.get('/', withAuth, (req, res) => {
+app.get('/dashboard', withAuth, (req, res) => {
     Post.findAll({
       where: {
         user_id: req.session.user_id
@@ -12,7 +13,7 @@ router.get('/', withAuth, (req, res) => {
       attributes: [
         'id',
         'title',
-        'content',
+        'post_content',
         'created_at'
       ],
       include: [
@@ -41,14 +42,14 @@ router.get('/', withAuth, (req, res) => {
   });
 
 
-router.get('/edit/:id', withAuth, (req, res) => {
+app.get('/dashboard/edit/:id', withAuth, (req, res) => {
     Post.findOne({
         where: {
           id: req.params.id
         },
         attributes: ['id', 
                      'title',
-                     'content',
+                     'post_content',
                      'created_at'
                   ],
         include: [
@@ -80,10 +81,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
         });
 })
 
-router.get('/new', (req, res) => {
+app.get('/new', (req, res) => {
     res.render('new-post');
 });
-
-
-
-module.exports = router;
+};
