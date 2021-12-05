@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Never Walk Alone</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheet/style.css">
 </head>
 
 <body>
@@ -22,7 +22,7 @@
                 {{else}}
                 <ul class="right hide-on-med-and-down">
                     {{!-- <a href="/" class="navbar-item is-hoverable pt-1">homepage</a> --}}
-                    <a href="/login" class="navbar-item is-hoverable pt-1">login</a>
+                    <a href="/login" class="navbar-item is-hoverable pt-1">Login</a>
                 </ul>
                 {{/if}}
             </div>
@@ -33,6 +33,14 @@
         {{{ body }}}
     </main>
 
+    <footer>
+         <div class="footer-copyright cyan darken-1">
+            <div class="container">
+            © 2021 Copyright Text
+            </p>Made by Charlie, Nick, and Mambu</p>
+            </div>
+          </div>
+    </footer>
 
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
