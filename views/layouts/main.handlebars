@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Never Walk Alone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper cyan darken-1">
+                <a href="/" class="brand-logo">Never Walk Alone</a>
+                {{#if loggedIn}}
+                <a href="/dashboard">dashboard</a>
+                <button id="logout" class="btn-no-style">logout</button>
+                {{else}}
+                <ul class="right hide-on-med-and-down">
+                    {{!-- <a href="/" class="navbar-item is-hoverable pt-1">homepage</a> --}}
+                    <a href="/login" class="navbar-item is-hoverable pt-1">login</a>
+                </ul>
+                {{/if}}
+            </div>
+        </nav>
+    </div>
+
+    <main>
+        {{{ body }}}
+    </main>
+
+
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+
+</html>
