@@ -13,8 +13,7 @@ The tech blog where users can write blogs about different technologies
 - (#questions)
 
 ## Deployed Application
-
-[Tech Blog](Heroku link goes here)
+(Heroku link goes here)
 ![Image](Image address will go here)
 
 ## User Story
@@ -56,8 +55,7 @@ THEN I am able to view comments but I am prompted to log in again before I can a
 
 
 ## Usage
-
-The Tech Blog is a blog website where developers can publish their blog posts and comment on other developers.
+Using our application, a user can post threads expressing their thoughts and emotions on any troubled time that they are going through. Also, users will be able to connect with support groups.
 
 ## License
 
