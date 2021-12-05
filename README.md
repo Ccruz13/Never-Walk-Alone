@@ -61,4 +61,4 @@ Using our application, a user can post threads expressing their thoughts and emo
 
 This project is licensed under the MIT.
 
-## Developer Charlie Cruz , Nick Smalls , Mambu Francis
+## Developers Charlie Cruz , Nick Smalls , Mambu Francis
