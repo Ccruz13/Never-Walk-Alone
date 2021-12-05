@@ -17,8 +17,10 @@
             <div class="nav-wrapper cyan darken-1">
                 <a href="/" class="brand-logo">Never Walk Alone</a>
                 {{#if loggedIn}}
-                <a href="/dashboard">dashboard</a>
-                <button id="logout" class="btn-no-style">logout</button>
+                <ul class="right hide-on-med-and-down">
+                    <a href="/dashboard">dashboard</a>
+                    <button id="logout" class="btn-no-style">logout</button>
+                </ul>
                 {{else}}
                 <ul class="right hide-on-med-and-down">
                     {{!-- <a href="/" class="navbar-item is-hoverable pt-1">homepage</a> --}}
@@ -34,12 +36,12 @@
     </main>
 
     <footer>
-         <div class="footer-copyright cyan darken-1">
+        <div class="footer-copyright cyan darken-1">
             <div class="container">
-            © 2021 Copyright Text
-            </p>Made by Charlie, Nick, and Mambu</p>
+                © 2021 Copyright Text
+                </p>Made by Charlie, Nick, and Mambu</p>
             </div>
-          </div>
+        </div>
     </footer>
 
     {{#if loggedIn}}
