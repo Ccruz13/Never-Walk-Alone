@@ -15,7 +15,7 @@ Using our application, a user can post threads expressing their thoughts and emo
 
 ## Deployed Application
 https://never-walk-alone.herokuapp.com/dashboard
-![!Never Walk Alone](./assets/images/screenshot.png)
+![!Never Walk Alone](./assets/images/Screenshot.png)
 
 ## User Story
 
